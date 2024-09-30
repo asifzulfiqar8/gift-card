@@ -5,6 +5,7 @@ import WeOffer from "../sections/WeOffer";
 import OptionsGallery from "../sections/OptionsGallery";
 import CommonQuestions from "../sections/CommonQuestions";
 import FeaturedPost from "../sections/FeaturedPost";
+import ReviewSection from "../sections/ReviewSection";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <OptionsGallery />
       <CommonQuestions />
       <FeaturedPost />
+      <ReviewSection />
     </>
   );
 };

@@ -29,14 +29,14 @@ const Header = () => {
         <div className="relative cursor-pointer" onClick={dropdownHandler}>
           <div className="flex items-center gap-2">
             <span className="text-sm text-[#000]">Services</span>
-            <div className="rotate-0">
+            <div className={`transition-all duration-300 ${isDropdownOpen ? 'rotate-180':'rotate-0'}`}>
                 <ChevronIcon />
             </div>
           </div>
-          <div className={`absolute top-[20px] right-0 w-[100px] border rounded-md transition-all duration-300 ${isDropdownOpen ? 'h-[86px] opacity-100':'h-0 opacity-0'}`}>
-            <a href="/" className="text-sm px-2 py-1 hover:bg-slate-200 block">Service One</a>
-            <a href="/" className="text-sm px-2 py-1 hover:bg-slate-200 block">Service One</a>
-            <a href="/" className="text-sm px-2 py-1 hover:bg-slate-200 block">Service One</a>
+          <div className={`absolute top-[25px] right-0 w-[100px] border rounded-md transition-all duration-300 ${isDropdownOpen ? 'h-[86px] opacity-100':'h-0 opacity-0'}`}>
+            <a href="/" className="text-sm px-2 py-1 bg-white hover:bg-slate-200 rounded-t-md block">Service One</a>
+            <a href="/" className="text-sm px-2 py-1 bg-white hover:bg-slate-200 block">Service One</a>
+            <a href="/" className="text-sm px-2 py-1 bg-white hover:bg-slate-200 rounded-b-md block">Service One</a>
           </div>
         </div>
         <a

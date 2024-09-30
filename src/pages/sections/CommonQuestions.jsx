@@ -24,19 +24,23 @@ const faqQuestions = [
 ];
 
 const AccordionItems = ({ question, answer, isOpen, onClick }) => {
-
   return (
-    <div className="flex gap-4 lg:gap-6 cursor-pointer py-3 border-t" onClick={onClick}>
-      <h6 className="text-[#000] text-sm font-semibold text-nowrap">
-        {question}
-      </h6>
-      <p
-        className={`text-[#7A7A7A] text-sm transition-all duration-400 ${
-          isOpen ? "h-[50px] opacity-100" : "h-0 opacity-0"
-        }`}
-      >
-        {answer}
-      </p>
+    <div
+      className="flex gap-4 lg:gap-6 cursor-pointer py-3 border-t"
+      onClick={onClick}
+    >
+      <div className="flex flex-wrap gap-4">
+        <h6 className="text-[#000] text-xs sm:text-sm font-semibold text-nowrap">
+          {question}
+        </h6>
+        <p
+          className={`text-[#7A7A7A] text-sm transition-all duration-400 ${
+            isOpen ? "h-[130px] md:h-[50px] opacity-100" : "h-0 opacity-0"
+          }`}
+        >
+          {answer}
+        </p>
+      </div>
       <span className="text-base text-[#c07858] transiton-all duration-400">
         {isOpen ? <CrossIcon /> : <AddIcon />}
       </span>
@@ -45,17 +49,17 @@ const AccordionItems = ({ question, answer, isOpen, onClick }) => {
 };
 
 const CommonQuestions = () => {
-    const [openIndex, setOpenIndex] = useState(null); 
-    const toggleAccordion = (index) => {
-        if (openIndex === index) {
-          setOpenIndex(null); // Close the currently opened accordion
-        } else {
-          setOpenIndex(index); // Open the clicked accordion
-        }
-      };
+  const [openIndex, setOpenIndex] = useState(null);
+  const toggleAccordion = (index) => {
+    if (openIndex === index) {
+      setOpenIndex(null); // Close the currently opened accordion
+    } else {
+      setOpenIndex(index); // Open the clicked accordion
+    }
+  };
 
   return (
-    <div className="container mx-auto py-[30px] md:py-[60px]">
+    <div className="container mx-auto py-[30px] md:py-[60px] px-4 overflow-hidden">
       <h3 className="text-center text-[#000] font-semibold">
         Common <span className="text-[#c07858]">questions</span>
       </h3>
@@ -72,7 +76,7 @@ const CommonQuestions = () => {
       </div>
       <div className="mt-4 md:mt-8 text-center">
         <span className="text-[#6B6B6B] text-sm cursor-pointer">
-            LAOD MORE +
+          LAOD MORE +
         </span>
       </div>
     </div>
