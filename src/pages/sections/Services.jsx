@@ -15,91 +15,254 @@ const tabs = [
   { id: 7, name: "Makeup Artist" },
 ];
 
-const categories = [
-  {
-    id: 1,
-    name: "Nail Spa",
-    icon: <NailSpaIcon />,
-    subcategories: [
-      { id: 1, name: "Manicure" },
-      { id: 2, name: "Pedicure" },
-      { id: 3, name: "Mani Pedi" },
-    ],
-  },
-  {
-    id: 2,
-    name: "Nail Extension",
-    icon: <NailExtension />,
-    subcategories: [
-      { id: 1, name: "Acrylic" },
-      { id: 2, name: "Hard Gel" },
-      { id: 3, name: "Blab" },
-      { id: 4, name: "Soft Gel Nails" },
-    ],
-  },
-  {
-    id: 3,
-    name: "Nail Treatment",
-    icon: <NailTreatmentIcon />,
-    subcategories: [
-      { id: 1, name: "Callus" },
-      { id: 2, name: "Paraffin" },
-      { id: 3, name: "Spa" },
-    ],
-  },
-];
+const categories = {
+  Nails: [
+    {
+      id: 1,
+      categoryName: "Nails",
+      name: "Nail Spa",
+      icon: <NailSpaIcon />,
+      subcategories: [
+        { id: 1, name: "Manicure" },
+        { id: 2, name: "Pedicure" },
+        { id: 3, name: "Mani Pedi" },
+      ],
+    },
+    {
+      id: 2,
+      categoryName: "Nail Extension",
+      name: "Nail Extension",
+      icon: <NailExtension />,
+      subcategories: [
+        { id: 1, name: "Acrylic" },
+        { id: 2, name: "Hard Gel" },
+        { id: 3, name: "Blab" },
+        { id: 4, name: "Soft Gel Nails" },
+      ],
+    },
+    {
+      id: 3,
+      categoryName: "Nail Treatment",
+      name: "Nail Treatment",
+      icon: <NailTreatmentIcon />,
+      subcategories: [
+        { id: 1, name: "Callus" },
+        { id: 2, name: "Paraffin" },
+        { id: 3, name: "Spa" },
+      ],
+    },
+  ],
+  Massage: [
+    {
+      id: 1,
+      categoryName: "Body Massage",
+      name: "Body Massage",
+      icon: <NailSpaIcon />,
+      subcategories: [
+        { id: 1, name: "Swedish Massage" },
+        { id: 2, name: "Deep Tissue" },
+        { id: 3, name: "Aromatherapy" },
+      ],
+    },
+    {
+      id: 2,
+      categoryName: "Foot Massage",
+      name: "Foot Massage",
+      icon: <NailSpaIcon />,
+      subcategories: [
+        { id: 1, name: "Reflexology" },
+        { id: 2, name: "Foot Rub" },
+      ],
+    },
+  ],
+  Eyelash: [
+    {
+      id: 1,
+      categoryName: "Lash Extensions",
+      name: "Lash Extensions",
+      icon: <NailSpaIcon />,
+      subcategories: [
+        { id: 1, name: "Classic Lashes" },
+        { id: 2, name: "Volume Lashes" },
+      ],
+    },
+    {
+      id: 2,
+      categoryName: "Lash Lifting",
+      name: "Lash Lifting",
+      icon: <NailSpaIcon />,
+      subcategories: [
+        { id: 1, name: "Keratin Lift" },
+        { id: 2, name: "Silk Lift" },
+      ],
+    },
+  ],
+  Body: [
+    {
+      id: 1,
+      categoryName: "Body Scrub",
+      name: "Body Scrub",
+      icon: <NailSpaIcon />,
+      subcategories: [
+        { id: 1, name: "Salt Scrub" },
+        { id: 2, name: "Sugar Scrub" },
+      ],
+    },
+  ],
+  "Face Treatment": [
+    {
+      id: 1,
+      categoryName: "Facial",
+      name: "Facial",
+      icon: <NailSpaIcon />,
+      subcategories: [
+        { id: 1, name: "Basic Facial" },
+        { id: 2, name: "Anti-Aging Facial" },
+      ],
+    },
+  ],
+  Hair: [
+    {
+      id: 1,
+      categoryName: "Haircut",
+      name: "Haircut",
+      icon: <NailSpaIcon />,
+      subcategories: [
+        { id: 1, name: "Men's Haircut" },
+        { id: 2, name: "Women's Haircut" },
+      ],
+    },
+    {
+      id: 2,
+      categoryName: "Hair Styling",
+      name: "Hair Styling",
+      icon: <NailSpaIcon />,
+      subcategories: [
+        { id: 1, name: "Blowout" },
+        { id: 2, name: "Curling" },
+      ],
+    },
+  ],
+  "Makeup Artist": [
+    {
+      id: 1,
+      categoryName: "Makeup Application",
+      name: "Makeup Application",
+      icon: <NailSpaIcon />,
+      subcategories: [
+        { id: 1, name: "Bridal Makeup" },
+        { id: 2, name: "Evening Makeup" },
+      ],
+    },
+  ],
+};
 
+// Products Data
 const products = [
   {
     id: 1,
     category: "Nails",
+    subcategory: "Manicure",
     name: "Manicure",
     price: "AED 80",
     duration: "60 Minutes",
     rating: "4.8 Stars",
     img: productImg,
-    description: [
-      "4.5+ Rated Beauticians, Premium Branded Products",
-      "Luxury Salon Experience, Urban Company Trust Marker",
-    ],
+    description: ["4.5+ Rated Beauticians", "Luxury Salon Experience"],
     tag: "Most Purchased",
   },
   {
     id: 2,
     category: "Nails",
-    name: "Manicure + Pedicure",
-    price: "AED 80",
-    duration: "60 Minutes",
-    rating: "4.8 Stars",
+    subcategory: "Pedicure",
+    name: "Pedicure",
+    price: "AED 85",
+    duration: "45 Minutes",
+    rating: "4.7 Stars",
     img: productImg,
-    description: [
-      "4.5+ Rated Beauticians, Premium Branded Products",
-      "Luxury Salon Experience, Urban Company Trust Marker",
-    ],
-    tag: "Most Purchased",
+    description: ["Premium Branded Products", "Urban Company Trust Marker"],
   },
   {
     id: 3,
-    category: "Nails",
-    name: "Nail Polish",
-    price: "AED 80",
-    duration: "60 Minutes",
+    category: "Massage",
+    subcategory: "Swedish Massage",
+    name: "Swedish Massage",
+    price: "AED 150",
+    duration: "90 Minutes",
+    rating: "4.9 Stars",
+    img: productImg,
+    description: ["Relaxing Experience", "Experienced Therapists"],
+  },
+  {
+    id: 4,
+    category: "Eyelash",
+    subcategory: "Classic Lashes",
+    name: "Classic Lash Extensions",
+    price: "AED 200",
+    duration: "120 Minutes",
+    rating: "5.0 Stars",
+    img: productImg,
+    description: ["Long-Lasting", "Natural Look"],
+  },
+  {
+    id: 5,
+    category: "Body",
+    subcategory: "Salt Scrub",
+    name: "Salt Scrub",
+    price: "AED 180",
+    duration: "75 Minutes",
     rating: "4.8 Stars",
     img: productImg,
-    description: [
-      "4.5+ Rated Beauticians, Premium Branded Products",
-      "Luxury Salon Experience, Urban Company Trust Marker",
-    ],
-    tag: "",
+    description: ["Exfoliating Treatment", "Soft & Smooth Skin"],
   },
+  {
+    id: 6,
+    category: "Face Treatment",
+    subcategory: "Anti-Aging Facial",
+    name: "Anti-Aging Facial",
+    price: "AED 250",
+    duration: "90 Minutes",
+    rating: "5.0 Stars",
+    img: productImg,
+    description: ["Youthful Skin", "Premium Products"],
+  },
+  {
+    id: 7,
+    category: "Hair",
+    subcategory: "Men's Haircut",
+    name: "Men's Haircut",
+    price: "AED 100",
+    duration: "30 Minutes",
+    rating: "4.7 Stars",
+    img: productImg,
+    description: ["Stylish Haircut", "Experienced Barber"],
+  },
+  {
+    id: 8,
+    category: "Makeup Artist",
+    subcategory: "Bridal Makeup",
+    name: "Bridal Makeup",
+    price: "AED 500",
+    duration: "120 Minutes",
+    rating: "5.0 Stars",
+    img: productImg,
+    description: ["Professional Makeup", "Long-Lasting"],
+  },
+  // Add more products similarly for other categories and subcategories
 ];
 
 const Services = () => {
   const [selectedTab, setSelectedTab] = useState("Nails");
+  const [selectedCategory, setSelectedCategory] = useState("Nails");
+  const [selectedSubcategory, setSelectedSubcategory] = useState(null);
 
   const filteredProducts = products.filter(
-    (product) => product.category === selectedTab
+    (product) =>
+      product.category === selectedTab &&
+      (!selectedCategory || product.category === selectedCategory) &&
+      (!selectedSubcategory || product.subcategory === selectedSubcategory)
   );
+
   return (
     <div className="px-4 w-full">
       <div className="container mx-auto mt-4">
@@ -121,7 +284,10 @@ const Services = () => {
                   ? "text-[#000] before:absolute before:w-[40px] before:h-[2px] before:bg-[#d29ea2] before:left-1/2 before:-translate-x-1/2 before:bottom-0"
                   : "text-[#6c6c6c]"
               }`}
-              onClick={() => setSelectedTab(tab.name)}
+              onClick={() => {
+                setSelectedTab(tab.name);
+                setSelectedCategory(tab.name);
+              }}
             >
               {tab.name}
             </button>
@@ -130,22 +296,42 @@ const Services = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 border-t border-[#f6e1dd]">
           <div className="col-span-12 lg:col-span-3 pt-4 md:pt-6">
             <div className="flex flex-col gap-4">
-              {categories.map((category) => (
+              {categories[selectedTab]?.map((category) => (
                 <div key={category.id}>
-                  <div className="flex items-center justify-between px-4 py-2">
+                  <div
+                    className={`flex items-center justify-between px-4 py-2 cursor-pointer transition-all duration-200 ${
+                      selectedCategory === category.categoryName
+                        ? "bg-[#fbf4f3] border-l-[6px] border-[#efd2ce]"
+                        : "bg-transparent"
+                    }`}
+                    onClick={() => {
+                      setSelectedCategory(category.categoryName);
+                      setSelectedSubcategory(null);
+                    }}
+                  >
                     <div className="flex items-center gap-3">
                       <div>{category.icon}</div>
-                      <p className="text-[#000] text-sm md:text-base">{category.name}</p>
+                      <p className="text-[#000] text-sm md:text-base">
+                        {category.name}
+                      </p>
                     </div>
                     <div className="mr-4">
                       <ChevronRightIcon />
                     </div>
                   </div>
-                  <div className="flex flex-col gap-2 ml-[3.7rem]">
+                  <div className="flex flex-col gap-2 ml-[3.7rem] mt-2">
                     {category.subcategories.map((subcategorie) => (
                       <p
                         key={subcategorie.id}
-                        className="text-sm md:text-[15px] text-[#00000080]"
+                        className={`text-sm md:text-[15px] cursor-pointer ${
+                          selectedSubcategory === subcategorie.name
+                            ? "text-[#000]"
+                            : "text-[#00000080]"
+                        }`}
+                        onClick={() => {
+                          setSelectedSubcategory(subcategorie.name);
+                          setSelectedCategory(category.categoryName);
+                        }}
                       >
                         {subcategorie.name}
                       </p>
@@ -157,67 +343,74 @@ const Services = () => {
           </div>
           <div className="col-span-12 lg:col-span-9 pl-4 md:pl-6 pt-4 md:pt-6 border-l border-[#f6e1dd]">
             <div className="flex flex-col gap-6">
-              {filteredProducts.map((product) => (
-                <div
-                  key={product.id}
-                  className="flex flex-wrap justify-between gap-4 border-b border-[#f6e1dd] pb-4"
-                >
-                  <div className="flex flex-wrap justify-between gap-4">
-                    <div>
-                      <div className="relative">
-                        <img
-                          src={product.img}
-                          alt="product image"
-                          className="w-[150px] h-[150px] rounded-lg object-cover"
-                        />
-                        <div className="w-[80px] h-[28px] rounded-md flex items-center justify-center gap-1 absolute bottom-[6px] left-[6px] bg-white">
-                          <ReviewStar />
-                          <p className="text-xs text-[#363636]">
-                            {product.rating}
+              {filteredProducts.length > 0 ? (
+                filteredProducts.map((product) => (
+                  <div
+                    key={product.id}
+                    className="flex flex-wrap justify-between gap-4 border-b border-[#f6e1dd] pb-4"
+                  >
+                    <div className="flex flex-wrap justify-between gap-4">
+                      <div>
+                        <div className="relative">
+                          <img
+                            src={product.img}
+                            alt="product image"
+                            className="w-[150px] h-[150px] rounded-lg object-cover"
+                          />
+                          <div className="w-[80px] h-[28px] rounded-md flex items-center justify-center gap-1 absolute bottom-[6px] left-[6px] bg-white">
+                            <ReviewStar />
+                            <p className="text-xs text-[#363636]">
+                              {product.rating}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-[9px] font-medium text-[#088e21] uppercase">
+                          Most Purchased
+                        </p>
+                        <p className="py-1 text-sm md:text-base">
+                          {product.name}
+                        </p>
+                        <div className="flex items-center gap-2 border-b border-dashed border-[#e5e5e5] pb-2">
+                          <p className="text-xs text-[#000]">
+                            Starts at{" "}
+                            <span className="font-semibold">
+                              {product.price}
+                            </span>
+                          </p>
+                          <div className="h-[14] w-[2px] bg-[#cccccc]"></div>
+                          <p className="text-xs text-[#000] flex items-center gap-1">
+                            <TimeIcon />
+                            <span className="font-semibold">
+                              {product.duration}
+                            </span>
+                            Minutes
                           </p>
                         </div>
+                        {product.description.map((duration, i) => (
+                          <div key={i} className="my-2 flex items-center gap-2">
+                            <ArrowIcon />
+                            <p className="text-xs">{duration}</p>
+                          </div>
+                        ))}
+                        <a href="/" className="text-[#aa6e6c] text-[13px]">
+                          View Details
+                        </a>
                       </div>
                     </div>
                     <div>
-                      <p className="text-[9px] font-medium text-[#088e21] uppercase">
-                        Most Purchased
-                      </p>
-                      <p className="py-1 text-sm md:text-base">
-                        {product.name}
-                      </p>
-                      <div className="flex items-center gap-2 border-b border-dashed border-[#e5e5e5] pb-2">
-                        <p className="text-xs text-[#000]">
-                          Starts at{" "}
-                          <span className="font-semibold">{product.price}</span>
-                        </p>
-                        <div className="h-[14] w-[2px] bg-[#cccccc]"></div>
-                        <p className="text-xs text-[#000] flex items-center gap-1">
-                          <TimeIcon />
-                          <span className="font-semibold">
-                            {product.duration}
-                          </span>{" "}
-                          Minutes
-                        </p>
-                      </div>
-                      {product.description.map((duration, i) => (
-                        <div key={i} className="my-2 flex items-center gap-2">
-                          <ArrowIcon />
-                          duration
-                          <p className="text-xs">{duration}</p>
-                        </div>
-                      ))}
-                      <a href="/" className="text-[#aa6e6c] text-[13px]">
-                        View Details
-                      </a>
+                      <button className="text-sm bg-[#f6e1dd] hover:bg-gradient-to-r hover:from-[#df988d] hover:to-[#a15d59] py-[10px] px-5 rounded-full text-[#a66460] hover:text-white transition-all duration-200">
+                        Book Now
+                      </button>
                     </div>
                   </div>
-                  <div>
-                    <button className="text-sm bg-[#f6e1dd] hover:bg-gradient-to-r hover:from-[#df988d] hover:to-[#a15d59] py-[10px] px-5 rounded-full text-[#a66460] hover:text-white transition-all duration-200">
-                      Book Now
-                    </button>
-                  </div>
+                ))
+              ) : (
+                <div className="p-4 text-sm text-[#707979]">
+                  No Products available
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
