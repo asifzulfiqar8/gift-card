@@ -1,76 +1,173 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import WhatsappIcon from "../../assets/whatsapp-img.png";
+import FacebookIcon from "../../assets/svgs/FacebookIcon";
+import InstagramIcon from "../../assets/svgs/InstagramIcon";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   const dropdownHandler = () => setIsDropdownOpen(!isDropdownOpen);
+  const navHandler = () => setIsNavOpen(!isNavOpen);
 
   return (
-    <div className="container mx-auto p-4 bg-white flex items-center justify-between gap-4 border-b border-[#E4E4E4] hidden lg:flex">
-      <div className="flex items-center gap-4 lg:gap-6">
-        <a
-          href="/"
-          className="bg-[#fbf0ee] rounded-full w-[104px] h-[50px] grid place-items-center text-[#8A8A8A] text-sm"
-        >
-          Gift Card
+    <div>
+      <div className="container mx-auto p-4 bg-white items-center justify-between gap-4 border-b border-[#E4E4E4] hidden lg:flex">
+        <div className="flex items-center gap-4 lg:gap-6">
+          <a
+            href="/"
+            className="bg-[#fbf0ee] rounded-full w-[104px] h-[50px] grid place-items-center text-[#8A8A8A] text-sm"
+          >
+            Gift Card
+          </a>
+          <a href="tel:2309239023">
+            <PhoneIcon />
+          </a>
+          <a href="/" className="text-[#000] text-sm ">
+            Blog
+          </a>
+        </div>
+        <a href="/">
+          <img src={logo} alt="logo" className="w-[189px] h-auto" />
         </a>
-        <a href="tel:2309239023">
-          <PhoneIcon />
-        </a>
-        <a href="/" className="text-[#000] text-sm ">
-          Blog
-        </a>
-      </div>
-      <a href="/">
-        <img src={logo} alt="logo" className="w-[189px] h-auto" />
-      </a>
-      <div className="flex items-center gap-4 lg:gap-6">
-        <div className="relative cursor-pointer" onClick={dropdownHandler}>
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-[#000]">Services</span>
+        <div className="flex items-center gap-4 lg:gap-6">
+          <div className="relative cursor-pointer" onClick={dropdownHandler}>
+            <div className="flex items-center gap-2">
+              <span className="text-sm text-[#000]">Services</span>
+              <div
+                className={`transition-all duration-300 ${
+                  isDropdownOpen ? "rotate-180" : "rotate-0"
+                }`}
+              >
+                <ChevronIcon />
+              </div>
+            </div>
             <div
-              className={`transition-all duration-300 ${
-                isDropdownOpen ? "rotate-180" : "rotate-0"
+              className={`absolute top-[25px] right-0 w-[100px] border rounded-md transition-all duration-300 ${
+                isDropdownOpen ? "h-[86px] opacity-100" : "h-0 opacity-0"
               }`}
             >
-              <ChevronIcon />
+              <a
+                href="/"
+                className="text-sm px-2 py-1 bg-white hover:bg-slate-200 rounded-t-md block"
+              >
+                Service One
+              </a>
+              <a
+                href="/"
+                className="text-sm px-2 py-1 bg-white hover:bg-slate-200 block"
+              >
+                Service One
+              </a>
+              <a
+                href="/"
+                className="text-sm px-2 py-1 bg-white hover:bg-slate-200 rounded-b-md block"
+              >
+                Service One
+              </a>
             </div>
           </div>
-          <div
-            className={`absolute top-[25px] right-0 w-[100px] border rounded-md transition-all duration-300 ${
-              isDropdownOpen ? "h-[86px] opacity-100" : "h-0 opacity-0"
-            }`}
+          <a
+            href="/"
+            className="w-[143px] h-[50px] rounded-full bg-white flex items-center justify-center gap-2 transition-all duration-200 hover:bg-[#bfffcc] border border-[#31d751]"
           >
-            <a
-              href="/"
-              className="text-sm px-2 py-1 bg-white hover:bg-slate-200 rounded-t-md block"
-            >
-              Service One
-            </a>
-            <a
-              href="/"
-              className="text-sm px-2 py-1 bg-white hover:bg-slate-200 block"
-            >
-              Service One
-            </a>
-            <a
-              href="/"
-              className="text-sm px-2 py-1 bg-white hover:bg-slate-200 rounded-b-md block"
-            >
-              Service One
-            </a>
+            <img src={WhatsappIcon} alt="whatsapp icon" className="w-6" />
+            <p className="text-sm text-[#31d751]">Book Now</p>
+          </a>
+        </div>
+      </div>
+      <div className="p-4 bg-white border-b border-[#E4E4E4] flex justify-between items-center lg:hidden relative">
+        <a href="/">
+          <img src={logo} alt="logo" className="w-[120px] h-auto" />
+        </a>
+        <div className="cursor-pointer" onClick={navHandler}>
+          <HamburgerIcon />
+        </div>
+      </div>
+      {isNavOpen && (
+        <div
+          className="fixed inset-0 bg-[#000000b0] z-10 w-full h-screen block lg:hidden"
+          onClick={navHandler}
+        >
+          <div
+            className="flex flex-col justify-between gap-4 bg-white rounded-lg p-4 m-2 w-[60%] h-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div>
+              <a href="/">
+                <img
+                  src={logo}
+                  alt="logo"
+                  className="w-[100px] h-auto border-b pb-2"
+                />
+              </a>
+              <div className="mt-4">
+                <p className="text-sm font-semibold">Menu</p>
+                <div className="flex flex-col gap-2 mt-2">
+                  <a href="/" className="text-[#8A8A8A] text-xs font-medium">
+                    Gift Card
+                  </a>
+                  <div>
+                    <div className="flex items-center gap-1">
+                      <p
+                        className="text-xs text-[#8A8A8A]"
+                        onClick={dropdownHandler}
+                      >
+                        Services
+                      </p>
+                      <div className={`${isDropdownOpen ? 'rotate-180':'rotate-0'} transition-all duration-200`}>
+                        <ChevronIcon />
+                      </div>
+                    </div>
+                    {/* lists */}
+                    <div
+                      className={`flex flex-col gap-1 mt-1 bg-[#dcdcdc] rounded-md transition-all duration-300 ${
+                        isDropdownOpen
+                          ? "p-2 h-[76px] opacity-100"
+                          : "h-0 opacity-0 invisible"
+                      }`}
+                    >
+                      <a
+                        href="/"
+                        className="text-[#8A8A8A] text-xs font-medium pb-1"
+                      >
+                        Service One
+                      </a>
+                      <a
+                        href="/"
+                        className="text-[#8A8A8A] text-xs font-medium"
+                      >
+                        Service Two
+                      </a>
+                      <a
+                        href="/"
+                        className="text-[#8A8A8A] text-xs font-medium"
+                      >
+                        Service Three
+                      </a>
+                    </div>
+                  </div>
+                  <a href="/" className="text-[#8A8A8A] text-xs font-medium">
+                    Blog
+                  </a>
+                  <a href="/" className="text-[#8A8A8A] text-xs font-medium">
+                    Book Now
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <a href="/">
+                <FacebookIcon />
+              </a>
+              <a href="/">
+                <InstagramIcon />
+              </a>
+            </div>
           </div>
         </div>
-        <a
-          href="/"
-          className="w-[143px] h-[50px] rounded-full bg-white flex items-center justify-center gap-2 border border-[#31d751]"
-        >
-          <img src={WhatsappIcon} alt="whatsapp icon" className="w-6" />
-          <p className="text-sm text-[#31d751]">Book Now</p>
-        </a>
-      </div>
+      )}
     </div>
   );
 };
@@ -110,6 +207,24 @@ const ChevronIcon = () => {
       <path
         d="M3.29279 4.78972L0.70701 2.20394C0.0770403 1.57397 0.52321 0.496826 1.41411 0.496826H6.58569C7.47659 0.496826 7.92276 1.57397 7.29279 2.20394L4.70701 4.78972C4.31648 5.18024 3.68332 5.18024 3.29279 4.78972Z"
         fill="#878787"
+      />
+    </svg>
+  );
+};
+
+const HamburgerIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="30"
+      height="30"
+      fill="currentColor"
+      className="bi bi-list"
+      viewBox="0 0 16 16"
+    >
+      <path
+        fillRule="evenodd"
+        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
       />
     </svg>
   );

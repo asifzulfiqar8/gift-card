@@ -264,7 +264,7 @@ const Services = () => {
   );
 
   return (
-    <div className="px-4 w-full">
+    <div className="px-4 w-full pb-[30px] md:pb-[60px]">
       <div className="container mx-auto mt-4">
         <div className="bg-[#f8f9fb] py-6 md:py-8 px-8 rounded-2xl bg-[url('/src/assets/services-aside.png')] bg-no-repeat bg-contain bg-right">
           <p className="text-sm text-[#c78176]">Services</p>
@@ -279,7 +279,7 @@ const Services = () => {
           {tabs.map((tab, id) => (
             <button
               key={tab.id}
-              className={`relative py-2 sm:py-3 px-3 sm:px-6 md:px-8 rounded-full bg-[#f8f9fb] text-xs sm:text-sm ${
+            className={`relative py-2 sm:py-3 px-3 sm:px-6 md:px-8 rounded-full bg-[#f8f9fb] hover:bg-[#d29ea2] hover:text-[#fff] transition-all duration-300 text-xs sm:text-sm ${
                 selectedTab === tab.name
                   ? "text-[#000] before:absolute before:w-[40px] before:h-[2px] before:bg-[#d29ea2] before:left-1/2 before:-translate-x-1/2 before:bottom-0"
                   : "text-[#6c6c6c]"

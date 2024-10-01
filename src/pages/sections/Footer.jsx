@@ -88,7 +88,7 @@ const Footer = () => {
           <div className="py-6 flex flex-wrap gap-4 justify-between">
             <a
               href="/"
-              className="w-[130px] md:w-[143px] h-[45px] md:h-[50px] rounded-full bg-white flex items-center justify-center gap-2 border border-[#31d751]"
+              className="w-[130px] md:w-[143px] h-[45px] md:h-[50px] rounded-full transition-all duration-200 hover:bg-[#bfffcc] bg-white flex items-center justify-center gap-2 border border-[#31d751]"
             >
               <img src={WhatsappIcon} alt="whatsapp icon" className="w-6" />
               <p className="text-sm text-[#31d751]">Book Now</p>
