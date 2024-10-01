@@ -1,9 +1,9 @@
 import React from "react";
-import Logo from "../../assets/logo.png";
-import WhatsappIcon from "../../assets/whatsapp-img.png";
+import Logo from "../../assets/logo.webp";
+import WhatsappIcon from "../../assets/whatsapp-img.webp";
 import FacebookIcon from "../../assets/svgs/FacebookIcon";
 import InstagramIcon from "../../assets/svgs/InstagramIcon";
-import cardImg from '../../assets/cards-img.png'
+import cardImg from '../../assets/cards-img.webp'
 
 const Footer = () => {
   return (

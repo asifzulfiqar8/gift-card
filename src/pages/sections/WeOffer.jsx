@@ -1,5 +1,5 @@
 import React from "react";
-import girlImage from "../../assets/girl-img.png";
+import girlImage from "../../assets/girl-img.webp";
 
 const WeOffer = () => {
   return (

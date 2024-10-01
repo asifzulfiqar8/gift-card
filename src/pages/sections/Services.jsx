@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import sideImg from "../../assets/services-aside.png";
+import sideImg from "../../assets/services-aside.webp";
 import NailSpaIcon from "../../assets/svgs/NailSpaIcon";
 import NailExtension from "../../assets/svgs/NailExtension";
 import NailTreatmentIcon from "../../assets/svgs/NailTreatmentIcon";
-import productImg from "../../assets/manicure.png";
+import productImg from "../../assets/manicure.webp";
 
 const tabs = [
   { id: 1, name: "Eyelash" },
@@ -266,7 +266,7 @@ const Services = () => {
   return (
     <div className="px-4 w-full pb-[30px] md:pb-[60px]">
       <div className="container mx-auto mt-4">
-        <div className="bg-[#f8f9fb] py-6 md:py-8 px-8 rounded-2xl bg-[url('/src/assets/services-aside.png')] bg-no-repeat bg-contain bg-right">
+        <div className="bg-[#f8f9fb] py-6 md:py-8 px-8 rounded-2xl bg-[url('/src/assets/services-aside.webp')] bg-no-repeat bg-contain bg-right">
           <p className="text-sm text-[#c78176]">Services</p>
           <h2 className="text-lg md:text-[34px] my-2">Nails Spa</h2>
           <p className="text-sm text-[#686868]">

@@ -1,5 +1,5 @@
 import React from "react";
-import roundedImg from "../../assets/rounded-img.png";
+import roundedImg from "../../assets/rounded-img.webp";
 
 const OptionsGallery = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import blogImage1 from "../../assets/blog-1.png";
-import blogImage2 from "../../assets/blog-2.png";
+import blogImage1 from "../../assets/blog-1.webp";
+import blogImage2 from "../../assets/blog-2.webp";
 
 const FeaturedPost = () => {
   return (

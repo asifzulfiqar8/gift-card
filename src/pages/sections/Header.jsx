@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo.png";
-import WhatsappIcon from "../../assets/whatsapp-img.png";
+import logo from "../../assets/logo.webp";
+import WhatsappIcon from "../../assets/whatsapp-img.webp";
 import FacebookIcon from "../../assets/svgs/FacebookIcon";
 import InstagramIcon from "../../assets/svgs/InstagramIcon";
 

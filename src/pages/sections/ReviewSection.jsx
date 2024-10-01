@@ -1,6 +1,6 @@
 import React from "react";
 import { RiDoubleQuotesL } from "react-icons/ri";
-import ReviewPic from "../../assets/review-pic.png";
+import ReviewPic from "../../assets/review-pic.webp";
 import Slider from "react-slick";
 
 const ReviewSection = () => {
