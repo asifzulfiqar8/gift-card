@@ -6,17 +6,21 @@ import OptionsGallery from "../sections/OptionsGallery";
 import CommonQuestions from "../sections/CommonQuestions";
 import FeaturedPost from "../sections/FeaturedPost";
 import ReviewSection from "../sections/ReviewSection";
+import Footer from "../sections/Footer";
+import Services from "../sections/Services";
 
 const Home = () => {
   return (
     <>
       <UpperBar />
       <Header />
+      <Services />
       <WeOffer />
       <OptionsGallery />
       <CommonQuestions />
       <FeaturedPost />
       <ReviewSection />
+      <Footer />
     </>
   );
 };

@@ -31,7 +31,7 @@ const ReviewSlide = () => {
       <div className="flex justify-center">
         <RiDoubleQuotesL fontSize={56} color="#d69388" />
       </div>
-      <p className="my-4 md:my-6 lg:my-8 text-center text-lg sm:text-[24px] md:text-[35px]">
+      <p className="my-4 md:my-6 lg:my-8 text-center text-lg sm:text-[24px] md:text-[35px] md:leading-[40px]">
         Had mani / pedi, Lovely technicians, Really happy with results, Will
         definitely use again. Thank you.
       </p>
